@@ -1,3 +1,4 @@
+from Backend.main import app
 from flask import Flask, render_template
 from jinja2 import Environment, FileSystemLoader
 import os
