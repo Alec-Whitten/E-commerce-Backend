@@ -1,10 +1,12 @@
 from flask import Flask, request, render_template
+from flask_cors import CORS
 from jinja2 import Environment, FileSystemLoader
 import json
 import os
 import sqlite3
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/product")
 def update_table():
