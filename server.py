@@ -1,8 +1,5 @@
-from flask import Flask, request, render_template
+from flask import Flask
 from flask_cors import CORS
-from jinja2 import Environment, FileSystemLoader
-import json
-import os
 import sqlite3
 
 app = Flask(__name__)
