@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 from jinja2 import Environment, FileSystemLoader
+import json
 import os
 import sqlite3
 
@@ -104,6 +105,11 @@ def database_data():
     description3 = description[2]
 
     return(productName1,productName2,productName3,price1,price2,price3,description1,description2,description3)
+
+@app.route('/test', methods=['GET'])
+def test():
+    name = request.form.get('name')
+    return json.dumps({'result' : name})
 
 
 if __name__=="__main__":
