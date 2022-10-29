@@ -108,7 +108,7 @@ def database_data():
 
 @app.route('/test', methods=['GET'])
 def test():
-    name = request.form.get('name')
+    name = "Alec"
     return json.dumps({'result' : name})
 
 
