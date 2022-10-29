@@ -1,4 +1,3 @@
-from Backend.main import app
 from flask import Flask, render_template
 from jinja2 import Environment, FileSystemLoader
 import os
@@ -6,7 +5,7 @@ import sqlite3
 
 app = Flask(__name__)
 
-@app.route("/product", method={'GET'})
+@app.route("/product")
 
 def update_table():
     root = os.path.dirname(os.path.abspath(__file__))
