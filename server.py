@@ -104,7 +104,7 @@ def database_data():
     description2 = description[1],
     description3 = description[2]
 
-    return(productName1,productName2,productName3,price1,price2,price3,description1,description2,description3)
+    return json.dumps({'result' : productName1})
 
 @app.route('/test', methods=['GET'])
 def test():
