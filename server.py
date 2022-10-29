@@ -5,7 +5,7 @@ import sqlite3
 
 app = Flask(__name__)
 
-@app.route("/product")
+@app.route("/product", method={'GET'})
 
 def update_table():
     root = os.path.dirname(os.path.abspath(__file__))
@@ -13,7 +13,7 @@ def update_table():
     env = Environment( loader = FileSystemLoader(templates_dir) )
     template = env.get_template('catalog.js')
 
-    conn = sqlite3.connect('../database/product.db')
+    conn = sqlite3.connect('./database/product.db')
     data = conn.execute("SELECT ProductName FROM Products")
     name = []
 
@@ -45,7 +45,7 @@ def update_table():
         description.append(databaseData)
 
 
-    filename = os.path.join(root, '../../Frontend/src/components/pages/', 'catalog.js')
+    filename = os.path.join(root, '../Frontend/src/components/pages/', 'catalog.js')
     with open(filename, 'w') as fh:
         fh.write(template.render(
             productName1 = name[0],
